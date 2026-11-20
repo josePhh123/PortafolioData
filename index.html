@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joseph Guadalupe · Data Engineer</title>
+<meta name="description" content="Joseph Guadalupe, Data Engineer. Diseño y construyo plataformas de datos por capas (bronze, silver, gold), CDC, ETL en Python y modelos estrella sobre Oracle, PostgreSQL y SQL Server.">
+<meta name="author" content="Joseph Guadalupe">
+<meta name="theme-color" content="#141414">
+<link rel="canonical" href="https://josephh123.github.io/PortafolioData/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:site_name" content="Joseph Guadalupe · Data Engineer">
+<meta property="og:title" content="Joseph Guadalupe · Data Engineer">
+<meta property="og:description" content="Datos crudos. Modelos limpios. Plataformas de datos por capas, CDC, ETL en Python y modelos estrella.">
+<meta property="og:url" content="https://josephh123.github.io/PortafolioData/">
+<meta property="og:image" content="https://josephh123.github.io/PortafolioData/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Haz de series de tiempo que pasa por bronze, silver y gold, con el nombre Joseph Guadalupe, Data Engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Joseph Guadalupe · Data Engineer">
+<meta name="twitter:description" content="Datos crudos. Modelos limpios. Plataformas de datos por capas, CDC, ETL en Python y modelos estrella.">
+<meta name="twitter:image" content="https://josephh123.github.io/PortafolioData/assets/img/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Martian+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Martian+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.className='js';</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Joseph Guadalupe","jobTitle":"Data Engineer","url":"https://josephh123.github.io/PortafolioData/","sameAs":["https://linkedin.com/in/josephguadalupe-si","https://github.com/josePhh123"]}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__labels" id="heroLabels" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#inicio"><i aria-hidden="true"></i>Joseph Guadalupe</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  </header>
+
+  <div class="hero__stage" data-beam aria-hidden="true"></div>
+
+  <div class="hero__body">
+    <p class="query" aria-hidden="true">select * from <b>gold.ingeniero</b> limit 1;</p>
+    <h1 class="hero__name" id="hero-title"><span class="sr-only">Joseph Guadalupe</span><span class="row r1" aria-hidden="true">Joseph</span><span class="row r2" aria-hidden="true">Guadalupe</span></h1>
+    <div class="side">
+      <span class="role">Data Engineer</span>
+      <p class="tagline">Datos crudos. Modelos limpios.</p>
+      <p class="lead">Diseño y construyo plataformas de datos por capas, del sistema transaccional al modelo estrella.</p>
+      <div class="ctas">
+        <a class="btn btn--y" href="#proyectos" data-cursor="→ proyectos">Ver proyectos</a>
+        <button class="btn btn--g" id="replay" type="button" data-cursor="replay"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8a5.5 5.5 0 1 0 1.6-3.9"/><path d="M2.5 2.5v3h3"/></svg>Volver a correr el pipeline</button>
+      </div>
+      <p class="hero__links">
+        <a href="https://linkedin.com/in/josephguadalupe-si" target="_blank" rel="noopener" data-cursor="linkedin">LinkedIn<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>
+        <a href="https://github.com/josePhh123" target="_blank" rel="noopener" data-cursor="github">GitHub<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>
+      </p>
+      <p class="status" id="heroStatus" aria-hidden="true">run #1 · 180 series · 10 080 filas · 0.0 s</p>
+      <span class="sr-only" id="heroLive" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Menú móvil -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="menu__top">
+    <span class="brand"><i aria-hidden="true"></i>Joseph Guadalupe</span>
+    <button class="menu-btn" id="menuClose" type="button">Cerrar</button>
+  </div>
+  <nav aria-label="Menú móvil">
+    <a href="#arquitectura">Arquitectura</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#stack">Stack</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</div>
+
+<main id="contenido" tabindex="-1">
+
+<!-- ============ 2. SOBRE MÍ ============ -->
+<section class="sec sec--blanco sobre-claro" id="perfil" aria-labelledby="perfil-t">
+  <div class="seam"><span>/ perfil</span></div>
+  <div class="wrap perfil">
+    <div class="perfil__txt">
+      <p class="nivel">Data Engineer · nivel mid · ~3 años en datos</p>
+      <h2 class="h2" id="perfil-t">Sobre <mark>mí</mark></h2>
+      <div class="perfil__p" data-reveal>
+        <p>Empecé como analista y consultor BI y hoy construyo la capa que está debajo de los tableros: ingesta, modelado y carga.</p>
+        <p>Trabajo con PostgreSQL, Oracle y SQL Server, y con Python para ETL y automatización. He hecho migraciones de datos entre Oracle, PostgreSQL y SQL Server.</p>
+        <p>Vengo del mundo de la construcción y de la contratación pública (licitaciones ante el OSCE): entiendo los datos de obra y sé qué pregunta quiere responder el negocio.</p>
+        <p>Estoy sumando nube (Databricks, Azure) con un proyecto propio, en abierto y en curso.</p>
+      </div>
+    </div>
+    <div class="ficha" data-reveal>
+      <p class="ficha__h">dim_perfil <span>1 fila</span></p>
+      <dl>
+        <div><dt>rol</dt><dd>data engineer</dd></div>
+        <div><dt>nivel</dt><dd>mid</dd></div>
+        <div><dt>base</dt><dd>Perú</dd></div>
+        <div><dt>años_en_datos</dt><dd>~3</dd></div>
+        <div><dt>bi_consultoria</dt><dd>2+ años</dd></div>
+        <div><dt>automatizacion</dt><dd>2+ años</dd></div>
+        <div><dt>nube</dt><dd>databricks (en curso)</dd></div>
+        <div><dt>objetivo</dt><dd>data engineer mid</dd></div>
+      </dl>
+    </div>
+    <ul class="cifras" data-reveal>
+      <li><b><span class="pre">~</span><span data-count="3">3</span></b><span>años en datos</span></li>
+      <li><b><span data-count="2">2</span><span class="pre">+</span></b><span>años como analista y consultor BI</span></li>
+      <li><b><span data-count="2">2</span><span class="pre">+</span></b><span>años en automatización</span></li>
+      <li><b><span data-count="2">2</span></b><span>modelos estrella en gold</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3. ARQUITECTURA ============ -->
+<section class="sec sec--negro" id="arquitectura" aria-labelledby="arq-t">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="h2" id="arq-t">Cómo construyo una <mark>plataforma de datos</mark></h2>
+      <p class="sec__aside">Caso real en construcción: data lake on-premise para una constructora. Pasa el cursor, toca o usa Tab sobre un nodo.</p>
+    </div>
+    <div class="arq" data-reveal>
+      <div class="arq__card">
+        <div class="arq__diag" id="arqDiag">
+          <svg class="arq__edges" id="arqEdges" aria-hidden="true"></svg>
+          <div class="arq__col" data-stage="0">
+            <p class="arq__stage"><span>01</span> fuentes</p>
+            <button class="node" type="button" data-id="oracle" aria-describedby="arqPanel"><b>Oracle</b><small>producción · vistas</small></button>
+            <button class="node" type="button" data-id="pg" aria-describedby="arqPanel"><b>PostgreSQL</b><small>transacciones</small></button>
+          </div>
+          <div class="arq__col" data-stage="1">
+            <p class="arq__stage"><span>02</span> captura</p>
+            <button class="node" type="button" data-id="cdc" aria-describedby="arqPanel"><b>CDC</b><small>solo lo que cambia</small></button>
+            <button class="node" type="button" data-id="foto" aria-describedby="arqPanel"><b>Foto</b><small>maestras</small></button>
+          </div>
+          <div class="arq__col" data-stage="2">
+            <p class="arq__stage"><span>03</span> <i class="chip chip--bronce"></i>bronze</p>
+            <button class="node" type="button" data-id="bronce" aria-describedby="arqPanel"><b>Bronze</b><small>crudo, tal cual</small></button>
+          </div>
+          <div class="arq__col" data-stage="3">
+            <p class="arq__stage"><span>04</span> <i class="chip chip--inter"></i>silver</p>
+            <button class="node" type="button" data-id="inter" aria-describedby="arqPanel"><b>Silver</b><small>limpieza y reglas</small></button>
+          </div>
+          <div class="arq__col" data-stage="4">
+            <p class="arq__stage"><span>05</span> <i class="chip chip--gold"></i>gold</p>
+            <button class="node" type="button" data-id="dim" aria-describedby="arqPanel"><b>dim_*</b><small>carga full</small></button>
+            <button class="node" type="button" data-id="tareo" aria-describedby="arqPanel"><b>fct_tareo</b><small>incremental</small></button>
+            <button class="node" type="button" data-id="avance" aria-describedby="arqPanel"><b>fct_avance</b><small>incremental</small></button>
+          </div>
+          <div class="arq__col" data-stage="5">
+            <p class="arq__stage"><span>06</span> consumo</p>
+            <button class="node" type="button" data-id="pbi" aria-describedby="arqPanel"><b>Power BI</b><small>tableros</small></button>
+            <button class="node" type="button" data-id="lightdash" aria-describedby="arqPanel"><b>Lightdash</b><small>exploración</small></button>
+            <button class="node" type="button" data-id="ia" aria-describedby="arqPanel"><b>IA local</b><small>LLM</small></button>
+          </div>
+        </div>
+      </div>
+      <aside class="arq__panel" id="arqPanel" aria-live="polite">
+        <p class="arq__kicker">nodo activo</p>
+        <h3 class="arq__title">El recorrido completo</h3>
+        <p class="arq__text">Fuentes transaccionales → captura → bronze → silver → gold (estrella) → consumo. Cada capa tiene una sola responsabilidad.</p>
+        <span class="pill pill--y">pipeline por capas</span>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-clip" aria-hidden="true"><div class="marquee">
+  <div class="marquee__track">
+    <p>SQL<i></i>Python<i></i>PostgreSQL<i></i>Oracle<i></i>SQL Server<i></i>CDC<i></i>Medallion<i></i>Modelado estrella<i></i>Databricks<i></i></p>
+    <p>SQL<i></i>Python<i></i>PostgreSQL<i></i>Oracle<i></i>SQL Server<i></i>CDC<i></i>Medallion<i></i>Modelado estrella<i></i>Databricks<i></i></p>
+  </div>
+</div></div>
+
+<!-- ============ 4. PROYECTOS ============ -->
+<section class="sec sec--hueso sobre-claro" id="proyectos" aria-labelledby="proy-t">
+  <div class="wrap">
+    <h2 class="h2" id="proy-t">Proyectos con <mark>datos reales</mark></h2>
+
+    <div class="proy-grid">
+      <!-- 1 constructora -->
+      <article class="card card--feat" data-cat="datos" tabindex="-1" aria-labelledby="p1">
+        <div class="card__txt">
+          <p class="card__meta"><span class="pill pill--borde">en curso</span><span class="card__n">01</span></p>
+          <h3 class="card__t" id="p1">Plataforma de datos para una constructora líder del Perú</h3>
+          <p class="card__prob"><b>Problema:</b> los datos de obra viven en sistemas transaccionales y no hay un modelo único para medir avance y mano de obra.</p>
+          <ul class="card__list">
+            <li>Diseñé el modelo dimensional en estrella de la capa gold: tareo (fact + dimensiones) y avance físico de obra (elemento → especialidad → disciplina; actividad → hito con peso).</li>
+            <li>Defino la estrategia de carga: CDC para tablas transaccionales y fotos para maestras; incremental con versionamiento y campos de auditoría, full para dimensiones.</li>
+            <li>Mapeo las vistas de producción de Oracle a bronze con ETLs en Python.</li>
+            <li>Participo en la arquitectura por capas del data lake on-premise en PostgreSQL: bronze → silver (capa intermedia) → gold.</li>
+          </ul>
+          <ul class="card__stack" aria-label="Stack"><li>PostgreSQL</li><li>Oracle</li><li>Python</li><li>CDC</li><li>Modelado dimensional</li><li>Lightdash</li><li>Power BI</li></ul>
+          <p class="card__links"><span class="card__priv">Privado (cliente)</span></p>
+        </div>
+        <figure class="star" aria-label="Esquema simplificado del modelo de avance de obra">
+          <div class="star__grid">
+            <div class="tbl-mini tbl-mini--dim" style="grid-area:a"><p>dim_elemento</p><span>especialidad</span><span>disciplina</span></div>
+            <div class="tbl-mini tbl-mini--dim" style="grid-area:b"><p>dim_actividad</p><span>hito</span><span>peso</span></div>
+            <div class="tbl-mini tbl-mini--fct" style="grid-area:f"><p>fct_avance</p><span>id_elemento</span><span>id_actividad</span><span>metrado</span><span>version</span><span>audit_*</span></div>
+            <div class="tbl-mini tbl-mini--dim" style="grid-area:c"><p>dim_fecha</p><span>dia · semana</span></div>
+            <svg class="star__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M25 22 L50 50 M75 22 L50 50 M50 50 L50 86"/></svg>
+          </div>
+          <figcaption>esquema simplificado · nombres genéricos</figcaption>
+        </figure>
+      </article>
+
+      <!-- 2 SEACE -->
+      <article class="card card--wide" data-cat="datos" aria-labelledby="p2">
+        <div class="card__txt">
+        <p class="card__meta"><span class="pill pill--vino">en construcción</span><span class="card__n">02</span></p>
+        <h3 class="card__t" id="p2">Plataforma de licitaciones públicas (SEACE / OECE) en Databricks</h3>
+        <p class="card__prob"><b>Problema:</b> los datos abiertos de contrataciones del Perú vienen en JSON anidado (OCDS) y no se pueden analizar tal cual.</p>
+        <ol class="track" aria-label="Estado por etapa">
+          <li class="is-done">datos<span class="sr-only">: hecho</span></li><li class="is-now">bronze<span class="sr-only">: en curso</span></li><li>silver<span class="sr-only">: siguiente</span></li><li>gold<span class="sr-only">: siguiente</span></li><li>dashboard<span class="sr-only">: siguiente</span></li>
+        </ol>
+        <p class="track__key" aria-hidden="true"><span class="k-done"></span>hecho <span class="k-now"></span>en curso <span class="k-next"></span>siguiente</p>
+        </div>
+        <div class="card__txt">
+        <ul class="card__list card__list--estado">
+          <li><b>Hecho:</b> cuenta de Databricks y primer mes de datos SEACE (JSON OCDS) descargado.</li>
+          <li><b>En curso:</b> ingesta a bronze con Python.</li>
+          <li><b>Siguiente:</b> silver (aplanar y normalizar el JSON), modelo gold y dashboard.</li>
+          <li><b>Planificado:</b> orquestación con Databricks Workflows.</li>
+        </ul>
+        <ul class="card__stack" aria-label="Stack"><li>Databricks (en curso)</li><li>Python</li><li>SQL</li><li>Medallion</li><li>JSON / OCDS</li><li>Dashboard</li></ul>
+        <p class="card__links"><a class="card__a" href="https://github.com/josePhh123" target="_blank" rel="noopener">Perfil de GitHub<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="tambien">
+      <h3 class="tambien__t">También construyo</h3>
+      <p class="tambien__p">Producto, IA aplicada y automatización: fuera del foco de ingeniería de datos.</p>
+      <div class="tambien__grid">
+      <!-- agente presupuestos -->
+      <article class="card card--sec card--edil" aria-labelledby="p4">
+        <p class="card__meta"><span class="pill pill--negro">en producción</span></p>
+        <h4 class="card__t" id="p4">Agente de IA para presupuestos de obra</h4>
+        <p class="card__prob"><b>Problema:</b> una constructora en Europa arma presupuestos y cómputos métricos a mano, desde PDFs, planos y fotos.</p>
+        <ul class="card__list">
+          <li>Lideré el proyecto con un colaborador: estructura, validación y trato directo con el cliente. Entregado en ~mes y medio.</li>
+          <li>Construí un agente de IA que genera presupuestos y cómputos desde PDFs, planos y fotos, usando presupuestos anteriores como contexto.</li>
+          <li>Integré scraping de precios de una entidad estatal, calendario con el correo corporativo y un panel de costos por tokens.</li>
+        </ul>
+        <ul class="card__stack" aria-label="Stack"><li>Vercel</li><li>Supabase</li><li>PostgreSQL</li><li>LLM</li><li>BD vectoriales</li><li>Web scraping</li></ul>
+      </article>
+
+      <!-- integración ERP -->
+      <article class="card card--sec card--vist" aria-labelledby="p3">
+        <p class="card__meta"><span class="pill pill--borde">entregado · consultoría</span></p>
+        <h4 class="card__t" id="p3">Automatización e integración con SAP Business One</h4>
+        <ul class="card__list">
+          <li>Automaticé flujos con Python, Selenium y Power Automate (RPA).</li>
+          <li>Integré con SAP Business One vía Service Layer y validé los endpoints en Postman.</li>
+        </ul>
+        <ul class="card__stack" aria-label="Stack"><li>Python</li><li>Selenium</li><li>Power Automate</li><li>SAP B1 Service Layer</li><li>Postman</li></ul>
+      </article>
+
+      <!-- Otros -->
+      <article class="card card--sec card--otros" aria-labelledby="p5">
+        <h4 class="card__t" id="p5">Otros proyectos</h4>
+        <ul class="otros">
+          <li><b>MicroFactura</b> <span class="pill pill--borde">en desarrollo</span><span>SaaS de facturación electrónica para Perú.</span></li>
+          <li><b>Control de obra</b> <span class="pill pill--borde">prototipo</span><span>Asistencia con QR y geocerca.</span></li>
+        </ul>
+      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. EXPERIENCIA ============ -->
+<section class="sec sec--blanco sobre-claro" id="experiencia" aria-labelledby="exp-t">
+  <div class="wrap exp">
+    <h2 class="h2 exp__h" id="exp-t">Dónde he <mark>movido datos</mark></h2>
+    <div class="exp__list">
+      <div class="exp__line" aria-hidden="true"><span></span></div>
+      <details class="rol" open>
+        <summary>
+          <span class="rol__who"><b>Constructora líder del Perú</b><span>Consultor de datos</span></span>
+          <span class="rol__when">Actual</span>
+          <i class="rol__ico" aria-hidden="true"></i>
+        </summary>
+        <div class="rol__body">
+          <ul>
+            <li>Participo en la plataforma de datos on-premise por capas: diseño los modelos estrella de gold (tareo y avance de obra), defino la estrategia de carga (CDC y fotos) y construyo ETLs en Python.</li>
+            <li>Me sumo al proyecto de IA local de la empresa y a Lightdash sobre la capa bronze.</li>
+          </ul>
+          <p class="rol__tech">PostgreSQL · Oracle · Python · CDC · Lightdash</p>
+        </div>
+      </details>
+      <details class="rol">
+        <summary>
+          <span class="rol__who"><b>Consultora de BI</b><span>Analista / Consultor BI</span></span>
+          <span class="rol__when">~2 años</span>
+          <i class="rol__ico" aria-hidden="true"></i>
+        </summary>
+        <div class="rol__body">
+          <ul>
+            <li><b>Universidad privada:</b> indicadores, ETL, gobierno de datos y modelos en Power BI.</li>
+            <li><b>Empresa industrial:</b> RPA + SAP B1. <b>Empresa de servicios públicos:</b> rediseño de tableros y medidas DAX.</li>
+          </ul>
+          <p class="rol__tech">Power BI · DAX · Python · Selenium · Power Automate · SAP B1</p>
+        </div>
+      </details>
+      <details class="rol">
+        <summary>
+          <span class="rol__who"><b>Constructora de obra pública</b><span>Apoyo en licitaciones</span></span>
+          <span class="rol__when">Anterior</span>
+          <i class="rol__ico" aria-hidden="true"></i>
+        </summary>
+        <div class="rol__body">
+          <ul>
+            <li>Apoyé al arquitecto jefe en licitaciones ante el OSCE, desde la convocatoria hasta la buena pro.</li>
+            <li>Origen de mi conocimiento de contratación pública, que uso en el proyecto SEACE.</li>
+          </ul>
+          <p class="rol__tech">OSCE · contratación pública</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. STACK ============ -->
+<section class="sec sec--negro" id="stack" aria-labelledby="stack-t">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="h2" id="stack-t">Stack, <mark>en tablas</mark></h2>
+      <p class="sec__aside legend"><span>uso diario</span> · <span>en proyectos</span> · <span>aprendiendo</span></p>
+    </div>
+    <div class="query-bar" data-reveal>
+      <label class="query-bar__field"><span class="query-bar__kw">select * from stack</span>
+        <input id="stackQuery" type="text" placeholder="where nivel = 'uso diario'" autocomplete="off" spellcheck="false" aria-label="Filtrar herramientas por nombre o nivel">
+      </label>
+      <div class="query-bar__chips" role="group" aria-label="Filtros rápidos">
+        <button type="button" class="qchip" data-q="uso diario" aria-pressed="false">uso diario</button>
+        <button type="button" class="qchip" data-q="@nube" aria-pressed="false">nube</button>
+        <button type="button" class="qchip" data-q="@ia" aria-pressed="false">ia</button>
+        <button type="button" class="qchip" data-q="" aria-pressed="true">todo</button>
+      </div>
+      <span class="sr-only" id="stackLive" aria-live="polite"></span>
+    </div>
+
+    <div class="tablas" id="tablas">
+      <div class="tabla" data-group="ingenieria de datos">
+        <h3><button type="button" aria-expanded="true">stack.ingenieria_datos <span class="cnt">7 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>Medallion</td><td>uso diario</td></tr><tr><td>CDC</td><td>uso diario</td></tr><tr><td>ETL / ELT</td><td>uso diario</td></tr>
+          <tr><td>Modelado estrella</td><td>uso diario</td></tr><tr><td>Versionamiento y auditoría</td><td>uso diario</td></tr>
+          <tr><td>Gobierno de datos</td><td>en proyectos</td></tr><tr><td>Kafka</td><td>aprendiendo</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="bases de datos">
+        <h3><button type="button" aria-expanded="true">stack.bases_de_datos <span class="cnt">5 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>PostgreSQL</td><td>uso diario</td></tr><tr><td>Oracle</td><td>uso diario</td></tr><tr><td>SQL Server</td><td>uso diario</td></tr>
+          <tr><td>Supabase</td><td>en proyectos</td></tr><tr data-tags="ia"><td>BD vectoriales</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="lenguajes">
+        <h3><button type="button" aria-expanded="true">stack.lenguajes <span class="cnt">4 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>SQL</td><td>uso diario</td></tr><tr><td>Python</td><td>uso diario</td></tr>
+          <tr><td>DAX</td><td>en proyectos</td></tr><tr><td>Power Query (M)</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="nube">
+        <h3><button type="button" aria-expanded="true">stack.nube <span class="cnt">4 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr data-tags="nube"><td>Databricks</td><td>aprendiendo · proyecto en curso</td></tr><tr data-tags="nube"><td>Azure</td><td>aprendiendo</td></tr>
+          <tr data-tags="nube"><td>Vercel</td><td>en proyectos</td></tr><tr data-tags="nube"><td>Supabase</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="bi">
+        <h3><button type="button" aria-expanded="true">stack.bi <span class="cnt">2 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>Power BI</td><td>uso diario</td></tr><tr><td>Lightdash</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="automatizacion">
+        <h3><button type="button" aria-expanded="true">stack.automatizacion <span class="cnt">4 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>Python + Playwright</td><td>en proyectos</td></tr><tr><td>Selenium</td><td>en proyectos</td></tr>
+          <tr><td>Power Automate</td><td>en proyectos</td></tr><tr><td>APIs REST · Postman · SAP B1</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="ia">
+        <h3><button type="button" aria-expanded="true">stack.ia <span class="cnt">4 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr data-tags="ia"><td>Agentes con LLM</td><td>en proyectos</td></tr><tr data-tags="ia"><td>RAG</td><td>en proyectos</td></tr>
+          <tr data-tags="ia"><td>Orquestación de agentes (Claude Code)</td><td>en proyectos</td></tr><tr data-tags="ia"><td>LLM locales</td><td>en proyectos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="tabla" data-group="herramientas">
+        <h3><button type="button" aria-expanded="true">stack.herramientas <span class="cnt">2 filas</span></button></h3>
+        <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
+          <tr><td>Git / GitHub</td><td>uso diario</td></tr><tr><td>VS Code</td><td>uso diario</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. NOTAS ============ -->
+<section class="sec sec--hueso sobre-claro" id="notas" aria-labelledby="notas-t">
+  <div class="seam"><span>/ notas</span></div>
+  <div class="wrap">
+    <h2 class="h2" id="notas-t">Notas de <mark>arquitectura</mark></h2>
+    <div class="notas">
+      <details class="nota">
+        <summary><span class="nota__n">nota 01</span><span class="nota__t">CDC vs. fotos: cuándo usar cada una</span><span class="nota__tag">captura</span><i class="nota__arr" aria-hidden="true">→</i></summary>
+        <p>CDC para tablas transaccionales: captura solo lo que cambia y conserva el historial. Foto para maestras y dimensiones: son pequeñas y más simples de recargar completas.</p>
+      </details>
+      <details class="nota">
+        <summary><span class="nota__n">nota 02</span><span class="nota__t">Por qué la gold es una estrella</span><span class="nota__tag">modelado</span><i class="nota__arr" aria-hidden="true">→</i></summary>
+        <p>Un hecho por proceso de negocio y dimensiones conformadas. El BI hace joins simples y rápidos, y cada medida tiene una sola definición.</p>
+      </details>
+      <details class="nota">
+        <summary><span class="nota__n">nota 03</span><span class="nota__t">Incremental con versionamiento, full para dimensiones</span><span class="nota__tag">carga</span><i class="nota__arr" aria-hidden="true">→</i></summary>
+        <p>Los transaccionales crecen y se corrigen: se cargan por incremento, con versión y campos de auditoría. Las dimensiones se recargan completas para no arrastrar deriva.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. CONTACTO ============ -->
+<section class="sec sec--negro contacto" id="contacto" aria-labelledby="contacto-t">
+  <div class="wrap">
+    <div class="contacto__grid">
+      <div>
+        <h2 class="h2 h2--cierre" id="contacto-t">¿Tienes datos en Oracle, Postgres o SQL Server que necesitan <mark>un modelo</mark>?</h2>
+        <p class="contacto__p">Conversemos por LinkedIn o revisa mi GitHub.</p>
+      </div>
+      <div class="ccard sobre-claro" data-reveal>
+        <a class="ccard__row" href="https://linkedin.com/in/josephguadalupe-si" target="_blank" rel="noopener" data-cursor="linkedin">
+          <span class="ccard__k">LinkedIn</span><span class="ccard__v">in/josephguadalupe-si</span><span class="ccard__arr" aria-hidden="true">↗</span><span class="sr-only">(abre en otra pestaña)</span>
+        </a>
+        <a class="ccard__row" href="https://github.com/josePhh123" target="_blank" rel="noopener" data-cursor="github">
+          <span class="ccard__k">GitHub</span><span class="ccard__v">josePhh123</span><span class="ccard__arr" aria-hidden="true">↗</span><span class="sr-only">(abre en otra pestaña)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="gigante" id="gigante" aria-hidden="true"><span class="gigante__row">Joseph</span> <span class="gigante__row">Guadalupe</span></p>
+</section>
+
+</main>
+
+<!-- ============ 9. FOOTER ============ -->
+<footer class="pie">
+  <p class="pie__brand">Data Engineer · Perú</p>
+  <nav class="pie__nav" aria-label="Pie de página">
+    <a href="#arquitectura">Arquitectura</a><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a>
+  </nav>
+  <div class="pie__end">
+    <button class="pie__top" type="button" id="toTop">Volver arriba ↑</button>
+    <p>© 2026 Joseph Guadalupe</p>
+  </div>
+</footer>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+<script src="assets/js/hero.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
