@@ -40,8 +40,6 @@
 <!-- ============ 1. HERO ============ -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
   <div class="hero__glow" aria-hidden="true"></div>
-  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero__labels" id="heroLabels" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="top">
@@ -54,8 +52,6 @@
     </nav>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
   </header>
-
-  <div class="hero__stage" data-beam aria-hidden="true"></div>
 
   <div class="hero__body">
     <p class="query" aria-hidden="true">select * from <b>gold.ingeniero</b> limit 1;</p>
@@ -75,6 +71,11 @@
       <p class="status" id="heroStatus" aria-hidden="true">run #1 · 180 series · 10 080 filas · 0.0 s</p>
       <span class="sr-only" id="heroLive" aria-live="polite"></span>
     </div>
+  </div>
+
+  <div class="hero__viz" aria-hidden="true">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__labels" id="heroLabels"></div>
   </div>
 </section>
 

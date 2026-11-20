@@ -10,7 +10,6 @@
   const statusEl = document.getElementById('heroStatus');
   const liveEl = document.getElementById('heroLive');
   const replayBtn = document.getElementById('replay');
-  const stageEl = hero.querySelector('[data-beam]');
   const mqReduce = matchMedia('(prefers-reduced-motion: reduce)');
   let reduce = mqReduce.matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -41,14 +40,14 @@
     };
   }
 
-  // geometría del haz en píxeles
+  // geometría del haz en fracciones del canvas (.hero__viz): escritorio = columna derecha, móvil = franja bajo el texto
+  const VIZ = {
+    d: { lx: .30, y: .48, xs: [0, .34, .56, .80, 1.04], spread: [.36, .10, .055, .02, .008] },
+    m: { lx: .26, y: .50, xs: [0, .30, .55, .80, 1.06], spread: [.40, .13, .07, .024, .01] }
+  };
   function stages() {
-    // en pantallas apiladas (<1200px) el haz vive en el espaciador [data-beam]
-    let cy = H * (mobile ? .33 : .34), B = H;
-    const sr = stageEl && stageEl.offsetHeight ? stageEl.getBoundingClientRect() : null;
-    if (sr) { cy = sr.top - hero.getBoundingClientRect().top + sr.height * .5; B = sr.height * 1.8; }
-    if (mobile) return { y: cy, B, xs: [0, .30, .55, .80, 1.06], spread: [.30, .085, .045, .016, .006] };
-    return { y: cy, B, xs: [0, .42, .60, .78, 1.04], spread: [.24, .075, .040, .014, .006] };
+    const G = VIZ[mobile ? 'm' : 'd'];
+    return { y: H * G.y, B: H, xs: G.xs, spread: G.spread, lx: G.lx };
   }
   const STAGE_NAMES = ['oracle · sql server · apis · json', 'bronze', 'silver', 'gold'];
 
@@ -63,9 +62,9 @@
   }
 
   function size() {
-    const r = hero.getBoundingClientRect();
+    const r = cv.getBoundingClientRect();
     W = r.width; H = r.height;
-    mobile = W < 820;
+    mobile = window.innerWidth <= 820;
     DPR = Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2);
     cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -86,7 +85,7 @@
       for (let j = 0; j < K; j++) pts.push({ u: j / (K - 1), x: 0, y: 0, ox: 0, oy: 0, vx: 0, vy: 0 });
       threads.push({
         lane, col, s: series(), pts, k: 0,
-        cx: Math.random() * W, cy: Math.random() * H * .9, ang: (Math.random() - .5) * 2.4,
+        cx: Math.random() * W, cy: H * (.08 + Math.random() * .84), ang: (Math.random() - .5) * 2.4,
         len: (mobile ? 120 : 220) + Math.random() * (mobile ? 160 : 360), amp: 10 + Math.random() * 34,
         delay: (Math.abs(lane) * 380 + Math.random() * 260) * T.hilo
       });
@@ -103,10 +102,10 @@
     for (let i = 0; i < 4; i++) {
       const el = document.createElement('span');
       el.className = 'lbl' + (i === 3 ? ' lbl--gold' : '') + (landed ? ' on' : '');
-      const x = i === 0 ? (mobile ? .24 : .16) : S.xs[i];
+      const x = i === 0 ? S.lx : S.xs[i];
       el.style.left = (x * 100) + '%';
       const off = i === 0 ? S.spread[0] * S.B + 14 : S.spread[i] * S.B + 26;
-      el.style.top = Math.max(mobile ? 72 : 96, S.y - off) + 'px';
+      el.style.top = Math.max(12, S.y - off) + 'px';
       el.textContent = i === 0 ? (mobile ? 'fuentes' : STAGE_NAMES[0]) : String(i).padStart(2, '0') + ' ' + STAGE_NAMES[i];
       labelsEl.appendChild(el);
     }
@@ -268,12 +267,12 @@
 
   // cursor (puntero fino) y toque puntual
   if (fine) {
-    hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); mouse.tx = e.clientX - r.left; mouse.ty = e.clientY - r.top; }, { passive: true });
+    hero.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse.tx = e.clientX - r.left; mouse.ty = e.clientY - r.top; }, { passive: true });
     hero.addEventListener('pointerleave', () => { mouse.tx = mouse.ty = -1e4; });
   } else {
     hero.addEventListener('pointerdown', e => {
       if (e.target.closest('a,button')) return;
-      const r = hero.getBoundingClientRect();
+      const r = cv.getBoundingClientRect();
       mouse.x = mouse.tx = e.clientX - r.left; mouse.y = mouse.ty = e.clientY - r.top;
       setTimeout(() => { mouse.tx = mouse.ty = -1e4; }, 260);
     }, { passive: true });
@@ -285,7 +284,7 @@
   addEventListener('resize', () => {
     clearTimeout(rz);
     rz = setTimeout(() => {
-      const r = hero.getBoundingClientRect();
+      const r = cv.getBoundingClientRect();
       if (Math.abs(r.width - lastW) < 2 && Math.abs(r.height - lastH) < 120) { size(); buildLabels(); if (reduce || !running) draw(reduce ? 1e5 : performance.now() - t0); return; }
       lastW = r.width; lastH = r.height;
       const keep = performance.now() - t0;
@@ -308,9 +307,9 @@
     ticking = true;
     requestAnimationFrame(() => {
       ticking = false;
-      const y = window.scrollY;
-      if (y > H * 1.2) return;
-      const prog = Math.min(1, y / (H || 1));
+      const y = window.scrollY, hh = hero.offsetHeight || 1;
+      if (y > hh * 1.2) return;
+      const prog = Math.min(1, y / hh);
       cv.style.transform = `translate3d(0,${(y * .25).toFixed(1)}px,0)`;
       cv.style.opacity = (1 - prog * .6).toFixed(3);
     });
@@ -319,6 +318,6 @@
   mqReduce.addEventListener && mqReduce.addEventListener('change', e => { reduce = e.matches; start(); });
 
   window.heroPipeline = { replay, pause, play };
-  const r0 = hero.getBoundingClientRect(); lastW = r0.width; lastH = r0.height;
+  const r0 = cv.getBoundingClientRect(); lastW = r0.width; lastH = r0.height;
   start();
 })();
