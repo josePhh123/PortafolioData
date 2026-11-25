@@ -107,7 +107,7 @@
         <p>Empecé como analista y consultor BI y hoy construyo la capa que está debajo de los tableros: ingesta, modelado y carga.</p>
         <p>Trabajo con PostgreSQL, Oracle y SQL Server, y con Python para ETL y automatización. He hecho migraciones de datos entre Oracle, PostgreSQL y SQL Server.</p>
         <p>Vengo del mundo de la construcción y de la contratación pública (licitaciones ante el OSCE): entiendo los datos de obra y sé qué pregunta quiere responder el negocio.</p>
-        <p>Estoy sumando nube (Databricks, Azure) con un proyecto propio, en abierto y en curso.</p>
+        <p>Ya tengo un proyecto propio completo en Databricks, en abierto, y sigo sumando nube con Azure.</p>
       </div>
     </div>
     <div class="ficha" data-reveal>
@@ -119,7 +119,7 @@
         <div><dt>años_en_datos</dt><dd>~3</dd></div>
         <div><dt>bi_consultoria</dt><dd>2+ años</dd></div>
         <div><dt>automatizacion</dt><dd>2+ años</dd></div>
-        <div><dt>nube</dt><dd>databricks (en curso)</dd></div>
+        <div><dt>nube</dt><dd>databricks (proyecto propio)</dd></div>
         <div><dt>objetivo</dt><dd>data engineer mid</dd></div>
       </dl>
     </div>
@@ -229,23 +229,23 @@
       <!-- 2 SEACE -->
       <article class="card card--wide" data-cat="datos" aria-labelledby="p2">
         <div class="card__txt">
-        <p class="card__meta"><span class="pill pill--vino">en construcción</span><span class="card__n">02</span></p>
+        <p class="card__meta"><span class="pill pill--negro">terminado</span><span class="card__n">02</span></p>
         <h3 class="card__t" id="p2">Plataforma de licitaciones públicas (SEACE / OECE) en Databricks</h3>
         <p class="card__prob"><b>Problema:</b> los datos abiertos de contrataciones del Perú vienen en JSON anidado (OCDS) y no se pueden analizar tal cual.</p>
         <ol class="track" aria-label="Estado por etapa">
-          <li class="is-done">datos<span class="sr-only">: hecho</span></li><li class="is-now">bronze<span class="sr-only">: en curso</span></li><li>silver<span class="sr-only">: siguiente</span></li><li>gold<span class="sr-only">: siguiente</span></li><li>dashboard<span class="sr-only">: siguiente</span></li>
+          <li class="is-done">datos<span class="sr-only">: hecho</span></li><li class="is-done">bronze<span class="sr-only">: hecho</span></li><li class="is-done">silver<span class="sr-only">: hecho</span></li><li class="is-done">gold<span class="sr-only">: hecho</span></li><li class="is-done">dashboard<span class="sr-only">: hecho</span></li>
         </ol>
-        <p class="track__key" aria-hidden="true"><span class="k-done"></span>hecho <span class="k-now"></span>en curso <span class="k-next"></span>siguiente</p>
+        <p class="track__key" aria-hidden="true"><span class="k-done"></span>pipeline completo, de punta a punta</p>
         </div>
         <div class="card__txt">
         <ul class="card__list card__list--estado">
-          <li><b>Hecho:</b> cuenta de Databricks y primer mes de datos SEACE (JSON OCDS) descargado.</li>
-          <li><b>En curso:</b> ingesta a bronze con Python.</li>
-          <li><b>Siguiente:</b> silver (aplanar y normalizar el JSON), modelo gold y dashboard.</li>
-          <li><b>Planificado:</b> orquestación con Databricks Workflows.</li>
+          <li><b>Bronze:</b> ingesta de 4 meses de JSON OCDS (agosto–noviembre 2026) desde un volume de Unity Catalog, con columnas de auditoría.</li>
+          <li><b>Silver:</b> 21 631 procesos con su versión más reciente, adjudicaciones por proveedor y montos llevados a soles con un tipo de cambio derivado de los propios datos.</li>
+          <li><b>Gold:</b> 2 359 obras adjudicadas en una tabla lista para BI.</li>
+          <li><b>Consumo:</b> un job orquesta los 5 notebooks y un dashboard muestra el monto por departamento y el top de contratistas.</li>
         </ul>
-        <ul class="card__stack" aria-label="Stack"><li>Databricks (en curso)</li><li>Python</li><li>SQL</li><li>Medallion</li><li>JSON / OCDS</li><li>Dashboard</li></ul>
-        <p class="card__links"><a class="card__a" href="https://github.com/josePhh123" target="_blank" rel="noopener">Perfil de GitHub<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></p>
+        <ul class="card__stack" aria-label="Stack"><li>Databricks</li><li>PySpark</li><li>Delta Lake</li><li>Unity Catalog</li><li>Medallion</li><li>JSON / OCDS</li><li>Jobs</li><li>AI/BI Dashboards</li></ul>
+        <p class="card__links"><a class="card__a" href="https://github.com/josePhh123/seace-databricks" target="_blank" rel="noopener">Ver código y arquitectura en GitHub<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></p>
         </div>
       </article>
 
@@ -404,7 +404,7 @@
       <div class="tabla" data-group="nube">
         <h3><button type="button" aria-expanded="true">stack.nube <span class="cnt">4 filas</span></button></h3>
         <table><thead class="sr-only"><tr><th scope="col">Herramienta</th><th scope="col">Nivel</th></tr></thead><tbody>
-          <tr data-tags="nube"><td>Databricks</td><td>aprendiendo · proyecto en curso</td></tr><tr data-tags="nube"><td>Azure</td><td>aprendiendo</td></tr>
+          <tr data-tags="nube"><td>Databricks</td><td>en proyectos</td></tr><tr data-tags="nube"><td>Azure</td><td>aprendiendo</td></tr>
           <tr data-tags="nube"><td>Vercel</td><td>en proyectos</td></tr><tr data-tags="nube"><td>Supabase</td><td>en proyectos</td></tr>
         </tbody></table>
       </div>
