@@ -242,11 +242,15 @@
           <li><b>Bronze:</b> ingesta de 4 meses de JSON OCDS (agosto–noviembre 2026) desde un volume de Unity Catalog, con columnas de auditoría.</li>
           <li><b>Silver:</b> 21 631 procesos con su versión más reciente, adjudicaciones por proveedor y montos llevados a soles con un tipo de cambio derivado de los propios datos.</li>
           <li><b>Gold:</b> 2 359 obras adjudicadas en una tabla lista para BI.</li>
-          <li><b>Consumo:</b> un job orquesta los 5 notebooks y un dashboard muestra el monto por departamento y el top de contratistas.</li>
+          <li><b>Consumo:</b> un job orquesta el pipeline y un dashboard definido como código (notebook 06) muestra monto por mes, procedimiento, departamento y concentración: 7 obras grandes suman el 29 % del monto.</li>
         </ul>
-        <ul class="card__stack" aria-label="Stack"><li>Databricks</li><li>PySpark</li><li>Delta Lake</li><li>Unity Catalog</li><li>Medallion</li><li>JSON / OCDS</li><li>Jobs</li><li>AI/BI Dashboards</li></ul>
+        <ul class="card__stack" aria-label="Stack"><li>Databricks</li><li>PySpark</li><li>Delta Lake</li><li>Unity Catalog</li><li>Medallion</li><li>JSON / OCDS</li><li>Jobs</li><li>AI/BI Dashboards</li><li>Databricks SDK</li></ul>
         <p class="card__links"><a class="card__a" href="https://github.com/josePhh123/seace-databricks" target="_blank" rel="noopener">Ver código y arquitectura en GitHub<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></p>
         </div>
+        <figure class="card__shot" style="grid-column:1 / -1;margin:8px 0 0">
+          <a href="https://github.com/josePhh123/seace-databricks" target="_blank" rel="noopener" style="display:block;border:2px solid #141414;border-radius:14px;overflow:hidden;line-height:0"><img src="assets/img/seace-dashboard.jpg" width="1200" height="926" loading="lazy" alt="Dashboard en Databricks: monto adjudicado en obras públicas del Perú por mes, tipo de procedimiento, departamento y tamaño de obra" style="width:100%;height:auto;display:block"></a>
+          <figcaption style="margin-top:8px;font-size:.85rem;opacity:.75">Dashboard en Databricks, generado desde el notebook <code>06_dashboard</code>. Clic para ver el código.</figcaption>
+        </figure>
       </article>
 
     </div>
